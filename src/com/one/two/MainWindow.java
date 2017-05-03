@@ -1,16 +1,12 @@
 package com.one.two;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
+import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -34,7 +30,6 @@ public class MainWindow extends JFrame implements ActionListener{
 		JPanel buttonPanel = new JPanel();
 		add(buttonPanel);
 		buttonPanel.setBackground(Color.decode("#DDF5EF"));
-
 		
 		ImageIcon icon = new ImageIcon("icon.png");
 		
@@ -45,12 +40,12 @@ public class MainWindow extends JFrame implements ActionListener{
 		
 		JButton studentButton = new JButton("Student");
         buttonPanel.add(studentButton);
-        studentButton.setForeground(Color.GRAY);
+        studentButton.setForeground(Color.BLACK);
         
 		studentButton.addActionListener(this);
 		JButton staffButton = new JButton("Staff");
         buttonPanel.add(staffButton);
-        staffButton.setForeground(Color.GRAY);
+        staffButton.setForeground(Color.BLACK);
 		staffButton.addActionListener(this);
 		
         setVisible(true);

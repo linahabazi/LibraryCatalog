@@ -3,6 +3,7 @@ package com.one.two;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,13 +39,25 @@ public class StaffLogin extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());	
 		
+		JPanel titlePanel = new JPanel();       
+		add(titlePanel, BorderLayout.NORTH);
+		titlePanel.setBackground(Color.decode("#DDF5EF"));
+		
+		JLabel title = new JLabel("Staff Login");
+        title.setFont(new Font("sansserif", Font.BOLD, 20));
+        title.setForeground(Color.GRAY);
+		titlePanel.add(title);
+		
 		JPanel credentialsPanel = new JPanel();
 		add(credentialsPanel, BorderLayout.CENTER);
 		credentialsPanel.setLayout(new BoxLayout(credentialsPanel,BoxLayout.Y_AXIS));
-        
+		credentialsPanel.setBackground(Color.decode("#DDF5EF"));
+
+		
 		JPanel usernamePanel = new JPanel();
 		credentialsPanel.add(usernamePanel);
 		usernamePanel.setLayout(new FlowLayout());
+		usernamePanel.setBackground(Color.decode("#DDF5EF"));
 		
 		JLabel usernameLabel = new JLabel("Username");
 		usernamePanel.add(usernameLabel);
@@ -53,14 +66,16 @@ public class StaffLogin extends JFrame implements ActionListener{
 		JPanel passwordPanel = new JPanel();
 		credentialsPanel.add(passwordPanel);
 		passwordPanel.setLayout(new FlowLayout());
-		
+		passwordPanel.setBackground(Color.decode("#DDF5EF"));
+
 		JLabel passwordLabel = new JLabel("Password");
 		passwordPanel.add(passwordLabel);
 		passwordPanel.add(password);
 		
 		JPanel notePanel = new JPanel();
 		credentialsPanel.add(notePanel);
-		
+		notePanel.setBackground(Color.decode("#DDF5EF"));
+
 		noteLabel.setForeground(Color.RED);
 		notePanel.add(noteLabel);
 		noteLabel.setVisible(false);
@@ -68,6 +83,7 @@ public class StaffLogin extends JFrame implements ActionListener{
         JPanel buttonsPanel = new JPanel();
         add(buttonsPanel, BorderLayout.SOUTH);
         buttonsPanel.setLayout(new FlowLayout());
+		buttonsPanel.setBackground(Color.decode("#DDF5EF"));
         
 		JButton backButton = new JButton("<- Back");
 		buttonsPanel.add(backButton);
@@ -79,9 +95,9 @@ public class StaffLogin extends JFrame implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e){
-		System.out.println("Logging in...");
 		String buttonString = e.getActionCommand();
 		if (buttonString.equals("Log In")){
+			System.out.println("Logging in...");
 			usernameInput = username.getText();
 			passwordInput = password.getText();
 			
